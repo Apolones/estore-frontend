@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import HomePage from "./components/HomePage";
+import PurchasePage from "./components/purchase/PurchasePage";
+import ElectroEmployeePage from "./components/electroEmployee/ElectroEmployeePage";
+import ElectroItemPage from "./components/electroItem/ElectroItemPage";
+import ElectroShopPage from "./components/electroShop/ElectroShopPage";
+import ElectroTypePage from "./components/electroType/ElectroTypePage";
+import EmployeePage from "./components/employee/EmployeePage";
+import PositionTypePage from "./components/positionType/PositionTypePage";
+import PurchaseTypePage from "./components/purchaseType/PurchaseTypePage";
+import ShopPage from "./components/shop/ShopPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <div>
+                <Navigation />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/purchase" element={<PurchasePage />} />
+                    <Route path="/electroemployee" element={<ElectroEmployeePage />} />
+                    <Route path="/electroitem" element={<ElectroItemPage />} />
+                    <Route path="/electroshop" element={<ElectroShopPage />} />
+                    <Route path="/electrotype" element={<ElectroTypePage />} />
+                    <Route path="/employee" element={<EmployeePage />} />
+                    <Route path="/positiontype" element={<PositionTypePage />} />
+                    <Route path="/purchasetype" element={<PurchaseTypePage />} />
+                    <Route path="/shop" element={<ShopPage />} />
+                </Routes>
+            </div>
+        </Router>
+    );
+};
 
 export default App;

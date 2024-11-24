@@ -20,7 +20,6 @@ const ElectroItemForm = () => {
         const fetchElectroTypes = async () => {
             try {
                 const response = await fetchAllPages(getElectroTypes);
-                ;
                 setElectroTypes(response || []);
             } catch (error) {
                 console.error('Ошибка загрузки типов электроники:', error);

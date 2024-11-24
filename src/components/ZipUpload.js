@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 
 const ZipUpload = () => {
     const location = useLocation();
-    const currentPage = location.pathname.split("/")[1];
 
     const [file, setFile] = useState(null);
     const [error, setError] = useState(null);
